@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f6dce8">
+
+  <title>Adelia Febian</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+         PETALS
+    ========================== -->
+
+  <div class="petals"></div>
+
+
+  <!-- =========================
+         HERO
+    ========================== -->
+
+  <main class="hero">
+
+    <div class="photo-wrap">
+
+      <div class="glow"></div>
+
+      <img id="mainPhoto" src="foto1.jpg" alt="Adelia Febian">
+
+      <div class="photo-dots" id="photoDots">
+      </div>
+
+    </div>
+
+
+    <div class="content">
+
+      <p class="small">
+        A LITTLE SPACE FOR
+      </p>
+
+      <h1>
+        Adelia
+        <span>Febian</span>
+      </h1>
+
+      <p class="line">
+        soft moments, pretty memories.
+      </p>
+
+      <button type="button" id="musicBtn" class="music-btn">
+
+        <span>♫</span>
+
+        <span id="musicText">
+          Play Magnolia
+        </span>
+
+      </button>
+
+      <p class="hint">
+        Tap the photo to change it
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+         MEMORIES
+    ========================== -->
+
+  <section class="memories">
+
+    <p class="small">
+      LITTLE MEMORIES
+    </p>
+
+    <h2>
+      A collection of little
+      <br>
+      moments.
+    </h2>
+
+
+    <div class="memory-grid">
+
+      <article class="memory-card reveal">
+
+        <img src="foto1.jpg" alt="One little moment" loading="lazy">
+
+        <p>
+          One little moment.
+        </p>
+
+      </article>
+
+
+      <article class="memory-card reveal">
+
+        <img src="foto2.jpg" alt="A pretty memory" loading="lazy">
+
+        <p>
+          A pretty memory.
+        </p>
+
+      </article>
+
+
+      <article class="memory-card reveal">
+
+        <img src="foto3.jpg" alt="Something worth remembering" loading="lazy">
+
+        <p>
+          Something worth remembering.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+         SURPRISE
+    ========================== -->
+
+  <section class="surprise-section">
+
+    <button type="button" id="surpriseBtn" class="surprise-btn">
+
+      A little surprise
+
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+         SURPRISE MODAL
+    ========================== -->
+
+  <div id="surpriseModal" class="surprise-modal" aria-hidden="true">
+
+    <div class="surprise-box">
+
+      <button type="button" id="closeSurprise" class="surprise-close" aria-label="Close">
+
+        ×
+
+      </button>
+
+
+      <p class="small">
+        JUST FOR YOU
+      </p>
+
+
+      <h2>
+        A little reminder
+      </h2>
+
+
+      <p>
+        Waktu hanya menyimpan cerita sampai kita
+        siap membacanya kembali.
+      </p>
+
+
+      <span class="surprise-heart">
+        ♡
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+         FULLSCREEN GALLERY
+    ========================== -->
+
+  <div id="galleryFullscreen" class="gallery-fullscreen" aria-hidden="true">
+
+    <button type="button" id="galleryClose" class="gallery-close" aria-label="Close gallery">
+
+      ×
+
+    </button>
+
+
+    <button type="button" id="galleryPrev" class="gallery-prev" aria-label="Previous photo">
+
+      ‹
+
+    </button>
+
+
+    <img id="galleryImage" class="gallery-image" src="foto1.jpg" alt="Adelia Febian">
+
+
+    <button type="button" id="galleryNext" class="gallery-next" aria-label="Next photo">
+
+      ›
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+         MUSIC
+    ========================== -->
+
+  <audio id="music" loop preload="metadata">
+
+    <source src="ssstik.io_1787496093785.mp3" type="audio/mpeg">
+
+  </audio>
+
+
+  <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
