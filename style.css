@@ -1002,124 +1002,7 @@ h1 span {
     }
 }
 
-/* =========================
-   FOOTER
-========================= */
 
-.site-footer {
-    width: 100%;
-    padding: 70px 20px 35px;
-    margin-top: 80px;
-
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.18);
-    border-top: 1px solid rgba(120, 70, 100, 0.08);
-
-    box-sizing: border-box;
-}
-
-.footer-title {
-    margin: 0 0 22px;
-
-    font-size: 18px;
-    font-family: Georgia, serif;
-    color: #765467;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 18px;
-}
-
-.social-links a {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(120, 70, 100, 0.12);
-
-    color: #765467;
-
-    box-shadow: 0 8px 25px rgba(120, 55, 90, 0.10);
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-4px);
-
-    background: rgba(255, 255, 255, 0.95);
-
-    box-shadow: 0 12px 30px rgba(120, 55, 90, 0.16);
-}
-
-.social-links svg {
-    width: 25px;
-    height: 25px;
-
-    fill: currentColor;
-}
-
-.footer-copy {
-    margin: 22px 0 0;
-
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-
-    letter-spacing: 0.08em;
-
-    color: #a27d8e;
-}
-
-
-/* =========================
-   FOOTER - HP
-========================= */
-
-@media (max-width: 700px) {
-
-    .site-footer {
-        padding: 60px 18px 30px;
-        margin-top: 60px;
-    }
-
-    .footer-title {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    .social-links {
-        gap: 16px;
-    }
-
-    .social-links a {
-        width: 46px;
-        height: 46px;
-    }
-
-    .social-links svg {
-        width: 23px;
-        height: 23px;
-    }
-
-    .footer-copy {
-        font-size: 11px;
-        margin-top: 20px;
-    }
-}
 
 /* =========================
    MEMORY ALBUM
@@ -1316,84 +1199,108 @@ h1 span {
 }
 
 /* =========================
-   FOOTER FIX
+   FOOTER FINAL
 ========================= */
 
 .site-footer {
-    display: block !important;
-    position: relative !important;
     width: 100%;
-    min-height: 220px;
-    padding: 60px 20px 35px;
     margin-top: 70px;
+    padding: 55px 20px 30px;
 
     box-sizing: border-box;
     text-align: center;
 
     background: rgba(255, 255, 255, 0.35);
     border-top: 1px solid rgba(120, 70, 100, 0.12);
-
-    z-index: 10;
 }
 
 .footer-title {
-    display: block !important;
+    display: block;
     margin: 0 0 22px;
 
+    font-family: Georgia, serif;
     font-size: 18px;
+    font-weight: normal;
+
     color: #765467;
 }
 
 .social-links {
-    display: flex !important;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 18px;
 }
 
 .social-links a {
-    display: flex !important;
-    width: 48px;
-    height: 48px;
-
+    display: flex;
     align-items: center;
     justify-content: center;
 
+    width: 48px;
+    height: 48px;
+
+    box-sizing: border-box;
     border-radius: 50%;
 
     background: rgba(255, 255, 255, 0.85);
     color: #765467;
 
     text-decoration: none;
+
+    border: 1px solid rgba(120, 70, 100, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(120, 70, 100, 0.12);
 }
 
 .social-links svg {
     width: 24px;
     height: 24px;
+
+    display: block;
+    fill: currentColor;
 }
 
 .footer-copy {
-    display: block !important;
+    display: block;
     margin: 22px 0 0;
 
+    font-family: Arial, sans-serif;
     font-size: 12px;
+    letter-spacing: 0.08em;
+
     color: #a27d8e;
 }
 
 
-/* HP */
+/* =========================
+   FOOTER - HP
+========================= */
 
 @media (max-width: 700px) {
 
     .site-footer {
-        display: block !important;
-        min-height: 210px;
-        padding: 55px 18px 30px;
+        width: 100%;
         margin-top: 60px;
+        padding: 50px 18px 30px;
     }
 
     .footer-title {
         font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        gap: 16px;
     }
 
     .social-links a {
@@ -1401,7 +1308,13 @@ h1 span {
         height: 46px;
     }
 
+    .social-links svg {
+        width: 23px;
+        height: 23px;
+    }
+
     .footer-copy {
         font-size: 11px;
+        margin-top: 20px;
     }
 }
