@@ -522,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// MEMORY ALBUM
+// MEMORY ALBUM - MOBILE FIX
 // =========================
 
 const memoryCards = document.querySelectorAll(".memory-card");
@@ -533,13 +533,13 @@ memoryAlbum.className = "memory-album";
 memoryAlbum.innerHTML = `
     <div class="memory-album-card">
 
-        <button class="memory-album-close">×</button>
+        <button class="memory-album-close" type="button">×</button>
 
-        <button class="memory-album-prev">‹</button>
+        <button class="memory-album-prev" type="button">‹</button>
 
         <img class="memory-album-image" src="" alt="Memory">
 
-        <button class="memory-album-next">›</button>
+        <button class="memory-album-next" type="button">›</button>
 
         <div class="memory-album-caption"></div>
 
@@ -547,6 +547,9 @@ memoryAlbum.innerHTML = `
 `;
 
 document.body.appendChild(memoryAlbum);
+
+const albumCard =
+    memoryAlbum.querySelector(".memory-album-card");
 
 const albumImage =
     memoryAlbum.querySelector(".memory-album-image");
@@ -565,8 +568,6 @@ const albumNext =
 
 let albumIndex = 0;
 
-
-// DATA MEMORY
 const memories = [...memoryCards].map(card => {
 
     const image = card.querySelector("img");
@@ -579,8 +580,6 @@ const memories = [...memoryCards].map(card => {
 
 });
 
-
-// TAMPILKAN MEMORY
 function showMemory(index) {
 
     albumIndex =
@@ -592,10 +591,17 @@ function showMemory(index) {
 }
 
 
-// BUKA ALBUM
+// TAP / TOUCH FOTO
 memoryCards.forEach((card, index) => {
 
-    card.addEventListener("click", () => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", function (e) {
+
+        if (
+            e.target.closest("button") ||
+            e.target.closest("a")
+        ) return;
 
         showMemory(index);
 
@@ -608,8 +614,8 @@ memoryCards.forEach((card, index) => {
 });
 
 
-// TUTUP
-albumClose.addEventListener("click", () => {
+// CLOSE
+albumClose.addEventListener("click", function () {
 
     memoryAlbum.classList.remove("show");
 
@@ -619,7 +625,7 @@ albumClose.addEventListener("click", () => {
 
 
 // PREVIOUS
-albumPrev.addEventListener("click", (e) => {
+albumPrev.addEventListener("click", function (e) {
 
     e.stopPropagation();
 
@@ -629,7 +635,7 @@ albumPrev.addEventListener("click", (e) => {
 
 
 // NEXT
-albumNext.addEventListener("click", (e) => {
+albumNext.addEventListener("click", function (e) {
 
     e.stopPropagation();
 
@@ -638,8 +644,8 @@ albumNext.addEventListener("click", (e) => {
 });
 
 
-// KLIK LUAR KARTU
-memoryAlbum.addEventListener("click", (e) => {
+// KLIK BACKGROUND
+memoryAlbum.addEventListener("click", function (e) {
 
     if (e.target === memoryAlbum) {
 
@@ -652,8 +658,8 @@ memoryAlbum.addEventListener("click", (e) => {
 });
 
 
-// KEYBOARD
-document.addEventListener("keydown", (e) => {
+// KEYBOARD LAPTOP
+document.addEventListener("keydown", function (e) {
 
     if (!memoryAlbum.classList.contains("show")) return;
 
