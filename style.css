@@ -1348,25 +1348,3 @@ h1 span {
         font-size: 11px;
     }
 }
-
-/* =========================
-   FOOTER VISIBILITY FIX
-========================= */
-
-.site-footer {
-    position: relative;
-    z-index: 20;
-    display: block;
-    clear: both;
-}
-
-@media (max-width: 700px) {
-    .site-footer {
-        display: block !important;
-        position: relative !important;
-        z-index: 20 !important;
-        width: 100% !important;
-        min-height: 220px !important;
-        margin-top: 0 !important;
-    }
-}
