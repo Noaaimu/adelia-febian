@@ -1009,17 +1009,21 @@ h1 span {
 .site-footer {
     width: 100%;
     padding: 70px 20px 35px;
+    margin-top: 80px;
 
     text-align: center;
 
     background: rgba(255, 255, 255, 0.18);
     border-top: 1px solid rgba(120, 70, 100, 0.08);
+
+    box-sizing: border-box;
 }
 
 .footer-title {
     margin: 0 0 22px;
 
     font-size: 18px;
+    font-family: Georgia, serif;
     color: #765467;
 }
 
@@ -1027,6 +1031,7 @@ h1 span {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 18px;
 }
 
@@ -1040,12 +1045,12 @@ h1 span {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.72);
     border: 1px solid rgba(120, 70, 100, 0.12);
 
-    color: #654357;
+    color: #765467;
 
-    box-shadow: 0 8px 25px rgba(100, 55, 80, 0.1);
+    box-shadow: 0 8px 25px rgba(120, 55, 90, 0.10);
 
     transition:
         transform 0.25s ease,
@@ -1058,44 +1063,61 @@ h1 span {
 
     background: rgba(255, 255, 255, 0.95);
 
-    box-shadow: 0 12px 30px rgba(100, 55, 80, 0.16);
+    box-shadow: 0 12px 30px rgba(120, 55, 90, 0.16);
 }
 
 .social-links svg {
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
 
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    fill: currentColor;
 }
 
 .footer-copy {
     margin: 22px 0 0;
 
-    font: 12px Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
     letter-spacing: 0.08em;
 
     color: #a27d8e;
 }
 
-/* HP */
+
+/* =========================
+   FOOTER - HP
+========================= */
 
 @media (max-width: 700px) {
 
     .site-footer {
-        padding: 60px 20px 30px;
+        padding: 60px 18px 30px;
+        margin-top: 60px;
     }
 
     .footer-title {
         font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        gap: 16px;
     }
 
     .social-links a {
         width: 46px;
         height: 46px;
+    }
+
+    .social-links svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+        margin-top: 20px;
     }
 }
 
