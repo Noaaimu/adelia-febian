@@ -917,7 +917,7 @@ h1 span {
 
     .surprise-section {
         padding:
-            50px 20px 30px;
+            50px 20px 80px;
     }
 
 
@@ -1203,24 +1203,25 @@ h1 span {
 ========================= */
 
 .site-footer {
-    display: block;
     width: 100%;
-    margin: 0;
-    padding: 45px 20px 30px;
+    margin-top: 70px;
+    padding: 55px 20px 30px;
+
     box-sizing: border-box;
     text-align: center;
+
     background: rgba(255, 255, 255, 0.35);
     border-top: 1px solid rgba(120, 70, 100, 0.12);
-    position: relative;
-    z-index: 10;
 }
 
 .footer-title {
     display: block;
     margin: 0 0 22px;
+
     font-family: Georgia, serif;
     font-size: 18px;
     font-weight: normal;
+
     color: #765467;
 }
 
@@ -1235,19 +1236,36 @@ h1 span {
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 48px;
     height: 48px;
+
     box-sizing: border-box;
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.85);
     color: #765467;
+
     text-decoration: none;
+
     border: 1px solid rgba(120, 70, 100, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(120, 70, 100, 0.12);
 }
 
 .social-links svg {
     width: 24px;
     height: 24px;
+
     display: block;
     fill: currentColor;
 }
@@ -1255,23 +1273,33 @@ h1 span {
 .footer-copy {
     display: block;
     margin: 22px 0 0;
+
     font-family: Arial, sans-serif;
     font-size: 12px;
     letter-spacing: 0.08em;
+
     color: #a27d8e;
 }
 
+/* =========================
+   FOOTER - HP
+========================= */
+
 @media (max-width: 700px) {
+
     .site-footer {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+
         width: 100%;
-        min-height: 190px;
-        margin: 0 !important;
-        padding: 42px 18px 28px;
+        min-height: 220px;
+        margin-top: 60px;
+        padding: 55px 18px 30px;
+
         box-sizing: border-box;
         text-align: center;
+
         position: relative;
         z-index: 10;
     }
@@ -1280,6 +1308,7 @@ h1 span {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+
         font-size: 16px;
         margin: 0 0 20px;
     }
@@ -1288,6 +1317,7 @@ h1 span {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+
         justify-content: center;
         align-items: center;
         gap: 16px;
@@ -1295,8 +1325,10 @@ h1 span {
 
     .social-links a {
         display: flex !important;
+
         width: 46px;
         height: 46px;
+
         align-items: center;
         justify-content: center;
     }
@@ -1311,7 +1343,30 @@ h1 span {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+
         margin: 22px 0 0;
         font-size: 11px;
+    }
+}
+
+/* =========================
+   FOOTER VISIBILITY FIX
+========================= */
+
+.site-footer {
+    position: relative;
+    z-index: 20;
+    display: block;
+    clear: both;
+}
+
+@media (max-width: 700px) {
+    .site-footer {
+        display: block !important;
+        position: relative !important;
+        z-index: 20 !important;
+        width: 100% !important;
+        min-height: 220px !important;
+        margin-top: 0 !important;
     }
 }
