@@ -1203,9 +1203,14 @@ h1 span {
 ========================= */
 
 .site-footer {
+    position: relative;
+    z-index: 3;
+    clear: both;
+
     width: 100%;
     margin-top: 70px;
     padding: 55px 20px 30px;
+    min-height: 180px;
 
     box-sizing: border-box;
     text-align: center;
@@ -1295,6 +1300,7 @@ h1 span {
         width: 100%;
         min-height: 220px;
         margin-top: 60px;
+        margin-bottom: 0;
         padding: 55px 18px 30px;
 
         box-sizing: border-box;
