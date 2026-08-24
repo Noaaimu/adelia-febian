@@ -1314,3 +1314,94 @@ h1 span {
         right: -8px;
     }
 }
+
+/* =========================
+   FOOTER FIX
+========================= */
+
+.site-footer {
+    display: block !important;
+    position: relative !important;
+    width: 100%;
+    min-height: 220px;
+    padding: 60px 20px 35px;
+    margin-top: 70px;
+
+    box-sizing: border-box;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-top: 1px solid rgba(120, 70, 100, 0.12);
+
+    z-index: 10;
+}
+
+.footer-title {
+    display: block !important;
+    margin: 0 0 22px;
+
+    font-size: 18px;
+    color: #765467;
+}
+
+.social-links {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-links a {
+    display: flex !important;
+    width: 48px;
+    height: 48px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    color: #765467;
+
+    text-decoration: none;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-copy {
+    display: block !important;
+    margin: 22px 0 0;
+
+    font-size: 12px;
+    color: #a27d8e;
+}
+
+
+/* HP */
+
+@media (max-width: 700px) {
+
+    .site-footer {
+        display: block !important;
+        min-height: 210px;
+        padding: 55px 18px 30px;
+        margin-top: 60px;
+    }
+
+    .footer-title {
+        font-size: 16px;
+    }
+
+    .social-links a {
+        width: 46px;
+        height: 46px;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+    }
+}
