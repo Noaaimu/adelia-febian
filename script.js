@@ -519,3 +519,154 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+
+// =========================
+// MEMORY ALBUM
+// =========================
+
+const memoryCards = document.querySelectorAll(".memory-card");
+
+const memoryAlbum = document.createElement("div");
+memoryAlbum.className = "memory-album";
+
+memoryAlbum.innerHTML = `
+    <div class="memory-album-card">
+
+        <button class="memory-album-close">×</button>
+
+        <button class="memory-album-prev">‹</button>
+
+        <img class="memory-album-image" src="" alt="Memory">
+
+        <button class="memory-album-next">›</button>
+
+        <div class="memory-album-caption"></div>
+
+    </div>
+`;
+
+document.body.appendChild(memoryAlbum);
+
+const albumImage =
+    memoryAlbum.querySelector(".memory-album-image");
+
+const albumCaption =
+    memoryAlbum.querySelector(".memory-album-caption");
+
+const albumClose =
+    memoryAlbum.querySelector(".memory-album-close");
+
+const albumPrev =
+    memoryAlbum.querySelector(".memory-album-prev");
+
+const albumNext =
+    memoryAlbum.querySelector(".memory-album-next");
+
+let albumIndex = 0;
+
+
+// DATA MEMORY
+const memories = [...memoryCards].map(card => {
+
+    const image = card.querySelector("img");
+    const caption = card.querySelector("p");
+
+    return {
+        src: image.src,
+        caption: caption ? caption.textContent : ""
+    };
+
+});
+
+
+// TAMPILKAN MEMORY
+function showMemory(index) {
+
+    albumIndex =
+        (index + memories.length) % memories.length;
+
+    albumImage.src = memories[albumIndex].src;
+    albumCaption.textContent = memories[albumIndex].caption;
+
+}
+
+
+// BUKA ALBUM
+memoryCards.forEach((card, index) => {
+
+    card.addEventListener("click", () => {
+
+        showMemory(index);
+
+        memoryAlbum.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+// TUTUP
+albumClose.addEventListener("click", () => {
+
+    memoryAlbum.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+});
+
+
+// PREVIOUS
+albumPrev.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    showMemory(albumIndex - 1);
+
+});
+
+
+// NEXT
+albumNext.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    showMemory(albumIndex + 1);
+
+});
+
+
+// KLIK LUAR KARTU
+memoryAlbum.addEventListener("click", (e) => {
+
+    if (e.target === memoryAlbum) {
+
+        memoryAlbum.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+
+// KEYBOARD
+document.addEventListener("keydown", (e) => {
+
+    if (!memoryAlbum.classList.contains("show")) return;
+
+    if (e.key === "Escape") {
+        albumClose.click();
+    }
+
+    if (e.key === "ArrowLeft") {
+        albumPrev.click();
+    }
+
+    if (e.key === "ArrowRight") {
+        albumNext.click();
+    }
+
+});

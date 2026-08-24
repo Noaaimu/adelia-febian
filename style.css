@@ -1098,3 +1098,197 @@ h1 span {
         height: 46px;
     }
 }
+
+/* =========================
+   MEMORY ALBUM
+========================= */
+
+.memory-album {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(91, 58, 78, 0.78);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.memory-album.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* KARTU ALBUM */
+
+.memory-album-card {
+    position: relative;
+
+    width: min(430px, 88vw);
+    padding: 14px 14px 24px;
+
+    background: #fffafc;
+    border-radius: 24px;
+
+    box-shadow: 0 25px 80px rgba(40, 20, 35, 0.3);
+
+    transform: perspective(900px) rotateY(75deg) scale(0.82);
+    opacity: 0;
+
+    transition:
+        transform 0.55s cubic-bezier(.2, .8, .2, 1),
+        opacity 0.4s ease;
+}
+
+.memory-album.show .memory-album-card {
+    transform: perspective(900px) rotateY(0deg) scale(1);
+    opacity: 1;
+}
+
+/* FOTO */
+
+.memory-album-image {
+    width: 100%;
+    height: min(62vh, 520px);
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 17px;
+}
+
+/* CAPTION */
+
+.memory-album-caption {
+    margin: 18px 10px 0;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+
+    color: #65485a;
+}
+
+/* CLOSE */
+
+.memory-album-close {
+    position: absolute;
+
+    top: -14px;
+    right: -14px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .9);
+    color: #65485a;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+/* PREV / NEXT */
+
+.memory-album-prev,
+.memory-album-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .9);
+    color: #65485a;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: transform .2s ease, background .2s ease;
+}
+
+.memory-album-prev {
+    left: -65px;
+}
+
+.memory-album-next {
+    right: -65px;
+}
+
+.memory-album-prev:active,
+.memory-album-next:active {
+    transform: translateY(-50%) scale(.9);
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+
+    .memory-album {
+        padding: 20px;
+    }
+
+    .memory-album-card {
+        width: min(340px, 88vw);
+        padding: 10px 10px 20px;
+        border-radius: 22px;
+    }
+
+    .memory-album-image {
+        height: 58vh;
+        max-height: 500px;
+        border-radius: 15px;
+    }
+
+    .memory-album-caption {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .memory-album-prev,
+    .memory-album-next {
+        width: 43px;
+        height: 43px;
+        font-size: 26px;
+    }
+
+    .memory-album-prev {
+        left: -8px;
+    }
+
+    .memory-album-next {
+        right: -8px;
+    }
+
+    .memory-album-close {
+        top: -12px;
+        right: -8px;
+    }
+}
