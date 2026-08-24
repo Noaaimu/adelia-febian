@@ -1001,3 +1001,100 @@ h1 span {
             0.01ms !important;
     }
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    width: 100%;
+    padding: 70px 20px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.18);
+    border-top: 1px solid rgba(120, 70, 100, 0.08);
+}
+
+.footer-title {
+    margin: 0 0 22px;
+
+    font-size: 18px;
+    color: #765467;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-links a {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(120, 70, 100, 0.12);
+
+    color: #654357;
+
+    box-shadow: 0 8px 25px rgba(100, 55, 80, 0.1);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow: 0 12px 30px rgba(100, 55, 80, 0.16);
+}
+
+.social-links svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-copy {
+    margin: 22px 0 0;
+
+    font: 12px Arial, sans-serif;
+    letter-spacing: 0.08em;
+
+    color: #a27d8e;
+}
+
+/* HP */
+
+@media (max-width: 700px) {
+
+    .site-footer {
+        padding: 60px 20px 30px;
+    }
+
+    .footer-title {
+        font-size: 16px;
+    }
+
+    .social-links a {
+        width: 46px;
+        height: 46px;
+    }
+}
