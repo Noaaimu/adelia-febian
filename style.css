@@ -1270,19 +1270,6 @@ h1 span {
     fill: currentColor;
 }
 
-.social-links a:first-child svg {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.social-links a:first-child svg circle:last-child {
-    fill: currentColor;
-    stroke: none;
-}
-
 .footer-copy {
     display: block;
     margin: 22px 0 0;
@@ -1360,4 +1347,17 @@ h1 span {
         margin: 22px 0 0;
         font-size: 11px;
     }
+}
+
+.social-links a:nth-child(2) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.social-links a:nth-child(2) svg {
+    display: block !important;
+    width: 24px;
+    height: 24px;
+    fill: currentColor !important;
 }
